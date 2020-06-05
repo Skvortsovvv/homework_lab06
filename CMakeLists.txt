@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_EXAMPLES "Build examples" OFF)
 
-project(print)
+project(solver)
 set(SOLVER_VERSION_MAJOR 0)
 set(SOLVER_VERSION_MINOR 1)
 set(SOLVER_VERSION_PATCH 0)
