@@ -1,0 +1,13 @@
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/install/strip.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/install/local.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/list_install_components.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/rebuild_cache.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/edit_cache.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/package_source.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/formatter_ex.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/hello_world.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/install.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/solver.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/formatter.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/solver_lib.dir
+/home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06/_build/CMakeFiles/package.dir
