@@ -16,10 +16,10 @@ artifacts:
   - path: ./_build/*.exe
     name: solver
 deploy:
-  release: $(APPVEYOR_REPO_TAG_NAME)
-  description: 'Release description'
-  provider: GitHub
-  api_token: 47878be1279814a1e282082bc90e519eab35fea9
-  artifact: solver
+    release: $(APPVEYOR_REPO_TAG_NAME)
+    description: 'Release description'
+    provider: GitHub
+    api_token: 47878be1279814a1e282082bc90e519eab35fea9
+    artifact: solver
   on:
-    APPVEYOR_REPO_TAG: true
+     APPVEYOR_REPO_TAG: true
