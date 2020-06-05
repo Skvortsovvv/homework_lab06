@@ -1,5 +1,9 @@
 language: cpp
 
+os:
+ - osx
+ - linux
+
 compiler:
  - gcc
  - clang
@@ -13,18 +17,42 @@ addons:
    - cmake
    - cmake-data
    - clang-3.7
-   - g++-7
+   - g++-7 
 
 script:
- - cd hello_world_application
- - cmake -H. -B_build
- - cmake --build _build
- - cmake --build _build --target hello_world
- - ./_build/hello_world
- - echo "Hello world application testing is done"
- - cd ..
- - cd solver_application
- - cmake -H. -B_build
- - cmake --build _build
- - cmake --build _build --target solver
- - echo "Solver application testing is done"
+    - cd hello_world_application
+    - cmake -H. -B_build
+    - cmake --build _build
+    - cmake --build _build --target hello_world
+    - "./_build/hello_world"
+    - echo "Hello world is done"
+    - cd ..
+    - cd solver_application
+    - cmake -H. -B_build
+    - cmake --build _build
+    - cmake --build _build --target solver
+    - cmake --build _build --target package_source
+    - cd _build
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+        cpack -G DragNDrop;
+      fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+        cpack -G DEB;
+        cpack -G RPM;
+      fi
+
+deploy:
+  provider: releases
+  api_key: 47878be1279814a1e282082bc90e519eab35fea9
+  file_glob: true
+  file:
+    - solver_application/_build/*.tar.gz
+    - solver_application/_build/*.zip
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then solver_application/_build/solver.dmg  ;fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+        solver_application/**/*.rpm;
+        solver_application/**/*.deb;
+      fi
+  skip_cleanup: true
+  on:
+    tags: true
