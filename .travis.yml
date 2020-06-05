@@ -30,6 +30,7 @@ addons:
 deploy:
   -provider: releases
   -api_key: 47878be1279814a1e282082bc90e519eab35fea9
+  -file_glob: true
   -file: 
    - ./_build/solver-0.1.0.-Darwin.dmg
    - ./_build/solver-0.1.0.-Linux.deb
