@@ -1,2 +1,2 @@
-[![Build Status](https://travis-ci.com/Skvortsovvv/lab04.svg?branch=master)](https://travis-ci.com/Skvortsovvv/lab04)
+[![Build Status](https://travis-ci.com/Skvortsovvv/homework_lab06.svg?branch=master)](https://travis-ci.com/Skvortsovvv/homework_lab06)
 
