@@ -1,24 +1,23 @@
 language: cpp
 
 os:
- - linux
- - osx
-
+    - linux
+    - osx
+    
 compiler:
- - gcc
- - clang
-
+    - gcc
+    - clang
 addons:
- apt:
-  sources:
-   - ubuntu-toolchain-r-test
-   - llvm-toolchain-precise-3.7
-  packages:
-   - cmake
-   - cmake-data
-   - clang-3.7
-   - g++-7 
-
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise-3.7
+    packages:
+    - cmake
+    - cmake-data
+    - clang-3.7
+    - g++-7
+    - rpm
 script:
     - cd hello_world_application
     - cmake -H. -B_build
@@ -48,9 +47,7 @@ deploy:
   file:
     - solver_application/_build/*.tar.gz
     - solver_application/_build/*.zip
-    - if [ "$TRAVIS_OS_NAME" = "osx" ];then
-        solver_application/_build/solver.dmg;
-      fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then solver_application/_build/solver.dmg  ;fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
         solver_application/**/*.rpm;
         solver_application/**/*.deb;
