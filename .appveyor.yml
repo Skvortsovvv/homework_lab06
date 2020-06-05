@@ -20,8 +20,7 @@ build_script:
 deploy:
     description: 'MSI release'
     provider: GitHub
-    auth_token:
-        secure: 47878be1279814a1e282082bc90e519eab35fea9
+    api_token: 47878be1279814a1e282082bc90e519eab35fea9
     artifact: solver_application\_build\*.msi
     draft: false
     on:
