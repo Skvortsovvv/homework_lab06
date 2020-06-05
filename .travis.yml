@@ -1,8 +1,8 @@
 language: cpp
 
 os:
- - osx
  - linux
+ - osx
 
 compiler:
  - gcc
@@ -48,7 +48,9 @@ deploy:
   file:
     - solver_application/_build/*.tar.gz
     - solver_application/_build/*.zip
-    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then solver_application/_build/solver.dmg  ;fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ];then
+        solver_application/_build/solver.dmg;
+      fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
         solver_application/**/*.rpm;
         solver_application/**/*.deb;
