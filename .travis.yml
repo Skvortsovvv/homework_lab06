@@ -1,40 +1,58 @@
 language: cpp
-jobs:
-  include:
-    - os: osx
-      script:
-        - cmake -H. -B_build
-        - cmake --build _build
-        - cd _build
-        - cpack -G DragNDrop
-        - cd ..
-    - os: linux
-      script:
-        - cmake -H. -B_build
-        - cmake --build _build
-        - cd _build
-        - cpack -G DEB
-        - cpack -G RPM
-        - cd ..
+
+os:
+    - linux
+    - osx
+    
+compiler:
+    - gcc
+    - clang
 addons:
   apt:
     sources:
-
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise-3.7
     packages:
-      - cmake
-      - cmake-data
-      - rpm
+    - cmake
+    - cmake-data
+    - clang-3.7
+    - g++-7
+    - rpm
+script:
+    - cd hello_world_application
+    - cmake -H. -B_build
+    - cmake --build _build
+    - cmake --build _build --target hello_world
+    - "./_build/hello_world"
+    - echo "Hello world is done"
+    - cd ..
+    - cd solver_application
+    - cmake -H. -B_build
+    - cmake --build _build
+    - cmake --build _build --target solver
+    - cd _build
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+        cpack -G DragNDrop;
+      fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+        cpack -G DEB;
+        cpack -G RPM;
+      fi
+
 deploy:
   provider: releases
-  api_key:
+  token:
     secure: >-
       YsZmtpu/7h6GYL2lUUvm6LIQfhTBT5ui4CbwM7ceBBKzz5p14en969B/UcVEatMby5KT1bvRm3dWR2muIPa4NtqpJVwBhOGOcJGHDUNJvmvxECwvxunp4skFh7GlMFp402ky0AVOq4FGL3iNzxaTmDEFOXnFbPEPvkGXCSBR4imnPgBBNoSmSseT4KjcGvN94Kzyz9SZ2OEU+NCBS/mkVQhclGiQhwo9xxxiiXgyi0FKZ5NjfAocieygX4KwXrq/tiUoP51wOT9TND/GMKqQ9tnrvUoC04+sB2nqI+AC3/VH0D5yKYYWVsqMCX65vBL8euqjwhItqZhvlIyQ0dZZ3nvcHCM8/Tnz47NFQZA2faIi7gwatTDl4LvqyFR+LbpDifs5hG3L5579+GT5bdEqy6lQEbCbu2SkIRNgODCRlISbI8qFDXrRFunFDlaZIUli1475+GlhxSsg0CZuHDL0X24b3KVGiIBTZPIOFEHVS8UN38NAIKAQgmftjKQsbRw387zmEirw6YvEklPBfVfpz95+ynQWaqnpqToznVzbztLWFkOnOFv7CB3mrH4vYwQ/sWAj1HfFpPSYKI0NolDPVXLx2CXxolYzT2lGPww9TmaD0wfRb4YX5v+WpqEpOcm51JFosliIZD6pkM2d/TZny1UtwS0u50Rp/hz9Fh86iXA=
+  file_glob: true
   file:
-    - solver_application/_build/solver-0.1.0.-Darwin.dmg
-    - solver_application/_build/solver-0.1.0.-Linux.deb
-    - solver_application/_build/solver-0.1.0.-Linux.rpm
+    - solver_application/_build/*.tar.gz
+    - solver_application/_build/*.zip
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then solver_application/_build/solver.dmg  ;fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+        solver_application/**/*.rpm;
+        solver_application/**/*.deb;
+      fi
   cleanup: false
   on:
     tags: true
-
-
