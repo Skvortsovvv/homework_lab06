@@ -42,7 +42,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: bf5ce1e1255400f7ecddf4991d37c826c210bc41
+  api_key: fbffa8114860710588a74e3258f602e8e1129761
   file_glob: true
   file:
     - solver_application/_build/*.tar.gz
