@@ -1,5 +1,5 @@
 Command line:
-"travis login --pro"
+"travis setup releases"
 
 
    ________                                 __
@@ -24,7 +24,7 @@ Command line:
 
      There is absolutely no warranty on any results obtained from TRAVIS.
 
-  #  Running on ubuntu-pc at Sat Jun  6 00:18:39 2020 (PID 5293).
+  #  Running on ubuntu-pc at Fri Jun  5 19:08:13 2020 (PID 12117).
   #  Running in /home/user/Skvortsovvv/workspace/homework/homework_lab06/lab06
   #  Code version: Aug 12 2017, compiled at Jan 14 2018 01:39:14, compiler "7.2.0", GCC 7.2.0
   #  Target platform: Linux, compile flags: DEBUG_ARRAYS 
@@ -36,8 +36,7 @@ Command line:
 
     Loading configuration from /home/user/.travis.conf ...
 
-[Renaming existing File input.txt to #1#input.txt ...OK.]
-Unknown parameter: "login".
+Unknown parameter: "setup".
 
     List of supported command line options:
 

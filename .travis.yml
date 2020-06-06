@@ -29,7 +29,8 @@ addons:
     - rpm
 deploy:
    provider: releases
-   api_token: 47878be1279814a1e282082bc90e519eab35fea9
+   api_key:
+      secure: YsZmtpu/7h6GYL2lUUvm6LIQfhTBT5ui4CbwM7ceBBKzz5p14en969B/UcVEatMby5KT1bvRm3dWR2muIPa4NtqpJVwBhOGOcJGHDUNJvmvxECwvxunp4skFh7GlMFp402ky0AVOq4FGL3iNzxaTmDEFOXnFbPEPvkGXCSBR4imnPgBBNoSmSseT4KjcGvN94Kzyz9SZ2OEU+NCBS/mkVQhclGiQhwo9xxxiiXgyi0FKZ5NjfAocieygX4KwXrq/tiUoP51wOT9TND/GMKqQ9tnrvUoC04+sB2nqI+AC3/VH0D5yKYYWVsqMCX65vBL8euqjwhItqZhvlIyQ0dZZ3nvcHCM8/Tnz47NFQZA2faIi7gwatTDl4LvqyFR+LbpDifs5hG3L5579+GT5bdEqy6lQEbCbu2SkIRNgODCRlISbI8qFDXrRFunFDlaZIUli1475+GlhxSsg0CZuHDL0X24b3KVGiIBTZPIOFEHVS8UN38NAIKAQgmftjKQsbRw387zmEirw6YvEklPBfVfpz95+ynQWaqnpqToznVzbztLWFkOnOFv7CB3mrH4vYwQ/sWAj1HfFpPSYKI0NolDPVXLx2CXxolYzT2lGPww9TmaD0wfRb4YX5v+WpqEpOcm51JFosliIZD6pkM2d/TZny1UtwS0u50Rp/hz9Fh86iXA=
    file_glob: true
    file: 
    - ./_build/solver-0.1.0.-Darwin.dmg
