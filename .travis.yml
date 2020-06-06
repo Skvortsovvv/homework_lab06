@@ -34,6 +34,7 @@ deploy:
     - ./_build/solver-0.1.0.-Linux.deb
     - ./_build/solver-0.1.0.-Linux.rpm
   cleanup: false
-on.tags: true
+  on:
+    tags: true
 
 
