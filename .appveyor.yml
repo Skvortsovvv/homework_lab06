@@ -3,7 +3,6 @@ platform:
   - x86
   - x64
 configuration: Release
-
 build_script:
   - cmd: cmake -H. -B_build
   - cmd: cmake --build _build --config Release
@@ -11,15 +10,14 @@ build_script:
   - cmd: ls
   - cmd: cpack -G NSIS
   - cmd: cd ..
-
 artifacts:
   - path: ./_build/*.exe
     name: solver
 deploy:
-    release: $(APPVEYOR_REPO_TAG_NAME)
-    description: 'Release description'
-    provider: GitHub
-    Authorization: Bearer s8vaqycfujggn871mglj
-    artifact: solver
-  on:
-     APPVEYOR_REPO_TAG: true
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: Release description
+  provider: GitHub
+  Authorization: Bearer s8vaqycfujggn871mglj
+  artifact: solver
+  'on':
+    APPVEYOR_REPO_TAG: true
