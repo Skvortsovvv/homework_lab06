@@ -20,7 +20,7 @@ deploy:
     description: 'Release description'
     provider: GitHub
     api_token:
-      secure: v2.6vd7yy9dp9hfjv2joecx
+      secure: s8vaqycfujggn871mglj
     artifact: solver
   on:
      APPVEYOR_REPO_TAG: true
